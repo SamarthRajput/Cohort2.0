@@ -1,0 +1,21 @@
+<!-- positioning element using float is the dumb way  -->
+
+<!-- <div style="margin-left: 100px; margin-right: 100px;">
+    <img src="logo.svg" alt="" width="200"> 
+    <span style="float: right ;">Sign up</span>
+</div> -->
+
+
+<!-- positioning element on the internet is done using flex box v.imp  -->
+<!-- flex box only works for the immediate childrens -->
+<!-- we said ki bhai parent div have only chidrens 1st img and 2nd is the div, 
+    and the 2nd div have a bunch of childrens itself -->
+
+    <!--  parent div => will say my 1st child on right and my 2nd child on left -->
+ <div style="display: flex; justify-content: space-between; margin-left: 100px; margin-right: 100px;">    
+    <img src="logo.svg" alt="" width="200">
+    <div style="display: flex;">
+        <div>About us</div>
+        <div>Sign up</div>
+    </div>
+</div>

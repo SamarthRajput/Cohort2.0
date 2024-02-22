@@ -1,0 +1,3 @@
+What are we trying to learn?
+What are browsers and how to do render websites?
+Ans:- A browser is like Google Chrome, Microsoft Edge , Firefox or even something that we can write anyone can write a browser of there own What is the goal ki if  your browser get some HTML which is some syntax it should render it inside the window is the goal of a browser . It is suppose to render elements that is gets from a HTML file.
