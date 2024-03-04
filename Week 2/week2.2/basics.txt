@@ -1,0 +1,66 @@
+difference between ECMAscript and javaScript and even javaScript and node.js is as big as the difference between java and C++
+what is node.js -> node.js is not a language , it is not a framework it is a runtime it means something that can run javaScript something that can compile javaScript
+ECMAscript -> a standard that state whoever wants to create a javaScript engine use ECMAscript
+clis stands for command line interface
+webRtc protocol which is a protocol used for video communication
+HTTP protocol helps us to communicate between frontend and backend and the backend is written in node.js
+HTTPS stands for Hyper Text Transfer Protocol Secure
+The thing we see when we go to google.com is known as frontend.
+The place where a request goes when we click on the search button and some respond comes back and renders the search results,the place is known as backend server.
+http lets us do communication between frontend and backend 
+HTTP server the thing that exposes the machine learning model to the world 
+RPC -> remote procedure calls which you are a calling but on someone else machine (heavy machine) 
+status code which is basically a way to signal ki han ignore the body, this is the status code of the request which could be 200 might be 500 might be 404 error not found.
+When i go to chatgpt.com the first thing that happens is DNS resolution stands for Domain Name Service Resolution 
+Good practice => if someone is putting something there(www.chatgpt.com) or posting something there it is a POST request
+if the request is get my conversations then it should be a GET request  
+learn how to intercept request then when you sending out requests put his authorization cookie there and then we can logged as him
+we write http servers using express
+
+
+to initialise npm we use command
+command =>      npm init -y
+this command will create a file package.json
+
+one small difference in fs and express is 
+fs comes built in with node.js we just have to require it 
+we have to bring express from the internet to our machine
+Ques => how to do that?
+Ans => using command this command says pls bring the express library locally to my machine
+command =>     npm install express
+
+
+Assignment 
+1. create a todo app that lets user store todos on the server
+2. try to create an http server from sratch in C
+3. create an http server in rust using actix-web
+4. create an http server in golang using gurrila framework
+5. or spring boot , java
+
+postman helps you to send request internally
+
+
+body-parser library to access of the body
+Install the body-parser library usig commands
+command => npm install body-parser
+
+import the body-parser library
+
+use npx nodemon filename.js command instead of node filename.js bcz npx nodemon command automatically restarts the express server when we change and save our file
+
+to our our code on local host 3006 or whatever using process.env.PORT we will use command 
+command => export PORT=3006
+
+
+npm stands for node package manager it lets you bring packages to our machine
+mpx stands for node package exectuable it helps use to the package immediately and not install it
+
+we can use body-parser .The body-parser enables us to parse incoming request odies in middleware.
+Express.js erver needs to know what type of data you are sending over the network, so it knows how to parse it.
+
+fs is a library that gives u high level constructs
+to do filesystem stuff (read from a file , write to a file...)
+
+what is express
+express is a library that gives u high level constructs 
+to create http servers
