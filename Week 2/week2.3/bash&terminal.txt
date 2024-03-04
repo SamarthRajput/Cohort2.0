@@ -1,0 +1,70 @@
+1. pwd => print working directory
+this is the base directory in our machine.
+Terminal is nothing but another interface to do things on your machine
+eg :- pwd
+
+2. cd => change directory
+navigate to a certain folder in the terminal 
+cd can takes us back or forward in our directory structure
+eg :- cd Desktop/
+we can in multiple folders using cd command
+eg :- cd Desktop/DSACOURSE
+to go back from current folder to previous folder we use 
+command => cd ..
+cd ../.. => takes me 2 folder behind using this we can go back from multiple folders
+
+
+3. ls => listing all the files in the current folder
+eg :- ls
+
+4. mkdir => make directory 
+To make a new folder using ternimal not the gui 
+command => mkdir foldername
+eg :- mkdir test  => it will create a folder named as test on my current directory
+
+5. touch => to create an empty file  
+command => touch filename
+eg :- touch index.js
+we can create any sort of file we want 
+
+6. cat => it prints the content of a file
+eg :- cat index.txt => this will print the content present inside the cat.txt file
+
+
+7. vi => vi command or specifically the vim command
+it lets us edit files 
+eg :- vi index.txt  => now we can start editing content inside the index.txt file
+To insert content inside the file press i then it will go into insert mode and now i can insert things 
+To exit from vim command we have tp run 3 commands
+press ESC button to come out of insert mode
+:q!
+press/type colon (:) then type q! and then press ENTER 
+to save our file when exiting we will use command
+:wq!
+this command will save our file while exiting
+
+8. mv => move files from 1 folder to another
+command => mv filename foldername/
+filename => the file which we want to move
+foldername => the folder in which we want to move
+eg :- mv a.txt test/
+
+9. cp => it lets you copy files from one folder to another
+eg :- cp a2.txt test/
+to copy one folder into folder we will have to do it recursively
+command => cp -r foldername1 foldername2
+foldername1 gets copied and gets pasted into foldername2
+eg :- cp -r test3 test2
+
+
+10. nvm => node version manager
+it lets us install node in our machine
+
+11. node 
+if just run node command will we give us a playground to run javaScript code
+to exit from node command press ctrl+c
+
+12. npm => node package manager
+we will mostly use
+command => npm install externaldependency
+eg :- npm install express

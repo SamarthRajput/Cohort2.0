@@ -1,0 +1,70 @@
+Bash is nothing but a command line interpreter language that lets you interact with your operating system 
+
+1. ls => list files
+the command display a list of files and directories in the current directory
+
+2. cd => change directory
+command to navigate to different folders or directories on your computer
+
+3. cat => concatenate
+command to display the contents of a file 
+to add content in a file we will use command
+command => cat > filename 
+and the press ctrl + c
+to append a file pr add few details to a file we use command 
+command => cat >> filename 
+and then press ctrl + c
+
+4. touch => create a new file
+command to create a new file
+
+5. mkdir => make directory
+command to create a new directory
+we can create a directory and at the same we can change the directory using && command 
+command => mkdir test && cd test
+
+6. cp => copy command
+cp source_file.txt destination_file.txt
+
+7. rm => deleting a file
+command => rm filename
+wipes out the entire folder using rm command
+command => rm -r foldername
+
+8. chmod => change file permissions 
+modify the read , write and execute permissions of a file
+1st to whom you are setting the permissions
+u -> user
+g -> group 
+o -> others
+2nd what are you doing 
++ -> adding a few permissions
+- -> removing a few permissions
+3rd what kind to permissions we are giving
+r -> read
+w -> write
+rwx -> read , write and execute
+4th specify the folder or file you want to do it for
+if its a folder we have to add a -R option in the command
+if its a file go ahead and do that
+
+9. echo => display a certain message
+command => echo 'hello world!'
+
+10. head => to see first/top 10 rows of a file
+command => head filename
+to see a specific set of rows of a file
+command => head -20 filename
+
+11. tail => to see last 10 rows of a file
+command => tail filename
+to see a certain section of a file we have to use head & tail command together
+we will use pipe operator(|) 
+lets suppose we have command 1 | command 2 so whatever output comes from command 1 flows to command 2 and what our pipe operator helps us to achieve
+eg :- start from 25th row and give me next 5 rows after that
+command will be => tail -n +25 newfile.txt| head 
+
+12. grep => grep is a command that lets you find occurences of certain words or phrases or any particular expression within a set of files or directory  
+eg:- grep "wordtofind" filename
+
+ 
