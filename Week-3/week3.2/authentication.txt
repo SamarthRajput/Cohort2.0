@@ -1,0 +1,33 @@
+Cryptogrphy jargons
+
+1.Hashing => Ques. Why do we hash passwords before we actually store them in the database
+Ans => people repeat passwords so it is standard practice for any backend developer put some password in the database they hash it they convert it into some weird format
+Converting a simple string into some complicated gibrish such that any time that single string is sent into the hash function gets converted into the same gibrish is called Hashing
+we can never guess the password just by looking at the gibrish words and we cannot decrypt this gibrish to look the password
+
+2.Encryption
+
+Difference between Encryption and Hashing is that
+Encryption is 2 way , Hashing is 1 way
+Hashing doesnt really required a password , Encryption does required a password who ever has this password if they see an encryped string they can decrypt it and in Hashing once password gets converted no one can just looking at the output convert it back into the hash
+
+3.Json Web Tokens => 1.Json => it will take json as input and give us a long string more structured data
+2.Web => as we use it on web
+3.Token => the long string that comes as an output is called token 
+
+4.Local Storage => we got the token when we signed up is when the backend returned the token
+the token is stored in local Storage
+some goes to sign up page they send a request with there username and password to our backend 
+first our backend converts the password into hash and then checks from the database ki han bhai are these credentials are correct
+and if they are backend returns back a JWT the backend creates the jwt and returns it back when the client gets this jwt 
+it stores it in the browser it does a localStorage.set("token", jwt)
+and it gets stored in the browser almost for forever only
+
+
+
+Try to save response in files, so that even if u exit the app and run it again , the data remains
+there are problems if we are using a file instead of database
+1. you dont have a standard way to store data
+2. hard to distribute
+3. DBs are optimised for reads and writes 
+4. DBs have logic for indexing to make some queries faster 

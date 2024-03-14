@@ -1,0 +1,18 @@
+DOM -> Document Object Model
+A standard for how to get, change, add, or delete HTMl elements
+DOM is not a programming language it is a programming interface for web documents
+
+                    Document    
+                        |
+                       HTML
+                       /  \
+                     HEAD BODY
+                      |   /  \
+                   TITLE h1   p
+                     |   |    |
+         "my Document""header""Paragraph"
+
+I want to access my heading <h1> i would write .document.body.h1 
+
+.innerHTML is a method thats available which lets you change the text or change the content of a given element
+

@@ -1,0 +1,27 @@
+The use case of Middlewares is usually to do prechecks 
+in real world prechecks are of 2 types
+1. authentication 
+2. input validation
+
+query parameters -> whenever you are sending a get request a lot of times you can send an input along
+for eg -  localhost:3000?n=30  this n is whats called an query parameter 
+
+next is a function in itself which we can call if you think things are fine 
+there are 3 inputs to a callback function 
+1.req
+2.res
+3.next
+
+In request we can send a range of callback functions
+for eg - app.get("/" , cb1 , cb2 , cb3 , function(req ,res , next){
+    
+});
+
+
+to install zod we will use command
+command => npm install zod 
+
+
+coercion -> to push someone to do something
+
+we will use next auth for authentication

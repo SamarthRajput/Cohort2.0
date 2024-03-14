@@ -1,0 +1,54 @@
+<!-- Problem Statement -> write some HTML code that is able to hit the backend server 
+create an HTML page that hits this API similar to when we click on a send button on chatgpt a request goes out and a response comes back and something gets rendered we need to do the same thing  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1st way to write a fetch() function
+        // function getAnimalData(){
+        //     // alert function lets you give native alerts in a browser 
+        //     // alert("hi there");
+
+        //     //here we will use fetch function
+        //     //under the hood its sending out a request , getting back a response and giving you a response
+        //     //by default any request that we send this will send a GET request
+        //     //if we want satisfy a POST request 
+        //     //this will change the request into POST request
+        //     // const response = fetch("https://fakerapi.it/api/v1/persons" , {
+        //     //     method : "POST "
+        //     // });
+        //     // console.log(response);
+
+        //     //fetch() returns a promise
+        //     fetch("https://fakerapi.it/api/v1/persons")
+        //         .then(function(response){
+        //             //response.json() lets you grab the data in the json format if you ki han response in json format 
+        //             //response.json() also returns a promise
+        //             response.json()
+        //                 .then(function(finalData){
+        //                     console.log(finalData);
+        //                 })
+        //     })
+        // }
+
+        //2nd way to write fetch() function
+        async function getAnimalData(){
+            //axios library let us do in a single call gives you back a json
+            // const response = axios.get("https://fakerapi.it/api/v1/persons")
+            const response = await fetch("https://fakerapi.it/api/v1/persons")
+            const finalData = await response.json();
+            // console.log(finalData);
+            //to render the animals here
+            document.getElementById("container").innerHTML = JSON.stringify(finalData.data);
+        }
+    </script>
+    <div id="container"></div>
+    <!-- this is the syntax in raw javascript to call a function when the button is clicked -->
+    <button onclick="getAnimalData()">Get animal data</button>
+</body>
+</html>

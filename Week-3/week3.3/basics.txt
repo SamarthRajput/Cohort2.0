@@ -1,0 +1,16 @@
+This is how authentication works in the real world
+We hit chatgpt backend with email and password they give back a json web token(Jwt)
+Now if we are sending any prompt along with the prompt you will send Jwt in the header
+the backend will first verify the jwt if the Jwt is correct the backend will run the model and then returns a value
+
+Jwt
+1.Generate a jwt => the Backend server creates a very long string which is just called a jwt which if it ever comes back to the backend server it can verify it 
+2. decoding a Jwt 
+3. verifying a jwt
+
+High level difference between Decoding and Verifying a Jwt
+1. Inputs to both are same which is a string but the output here is ki han 
+    verifying is only done by the backend server or the machine that have generated the original Jwt string
+    but decoding anyone can do it
+    
+     

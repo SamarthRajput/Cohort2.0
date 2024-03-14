@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript EventListener()</h2>
+    <p>This example uses addEventListener() method to execute a function when a user clicks on a button</p>
+    <button id="myBtn">Try it</button>
+
+
+    <script>    
+        //addEventListener(event , function , useCapture ) => first argument is the event , second argument is the function  
+        //there is 3rd argument which controls hows this event is actually applying
+
+        //for bubbling we pass the useCapture as false or if we dont pass false by default it is passed as false
+        //for capturing we pass the useCapture as true
+    
+        document.getElementById("myBtn").addEventListener("click", myFunction);
+
+        function myFunction(){
+            alert('helloworld');
+        }
+    </script>
+</body>
+</html>
