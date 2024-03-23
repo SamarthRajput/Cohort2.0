@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Problem statemnet Now you dont need calculate Sum button anytime someone type something the request should go out automatically  -->
+
+<body>
+    <!--  Anytime either this input changes or the another input changes you need to send the request and get back the response  -->
+    <!-- Anytime an input changes which means someone put something call this populateDiv2() function -->
+    <input oninput="debouncePopulateDiv()" type="text" placeholder="First Number" id="firstNumber">   <br></br>
+    <input oninput="debouncePopulateDiv()" type="text" placeholder="Second Number" id="secondNumber">   <br></br>
+    <!-- when i write 123 in input1 and 456 in input2 total 6 requests are going on. How can I optimize this slightly so that I dont send out 6 requests  -->
+    <!-- one way to do it copy 123 seprately and paste it that way only 1 request went out  -->
+    <div id="finalSum"></div>
+    <script>
+        //Debouncing , throtlling
+        // we will use debouncing to optimize the total no of requests 
+        //which basically means ki you dont send out request immediately when you know you have  a use case like this where the user will slowly add inputs and you know you want to wait somewhere till the very end 
+        //if the user hasnt typed for over 100miliseconds is when you want to send out the requests is known as debouncing or delayed sending out of request 
+
+        //Implementing Debouncing
+        //debouncePopulateDiv() have to call populateDiv() if debouncePopulateDiv() hasnt been called for 100milliseconds
+        //call happen to debouncePopulateDiv i will wait 100milliseconds if i dont get called again in 100milliseconds I will call populateDiv
+        //but if I do get called in 100milliseconds then i will wait for more 100milliseconds
+        let timeout;
+        function debouncePopulateDiv(){
+            //delay the call to populateDiv until ive not been called for 100ms
+            //and I've been called atleast once
+            
+            //If debouncePopulateDiv() gets called start the clock but if debouncePopulateDiv() gets called again while this clock is running stop the original clock and restart a new clock 
+            //timeout returns a number 
+            clearTimeout(timeout) 
+            timeout = setTimeout(function(){
+                populateDiv();
+            } , 100);
+            //how to cancel a clock? => clearTimeout helps us to clear a clock
+            //called clearTimeout with that number the clocks gets canceled
+        }
+
+        function populateDiv(){
+            const a = document.getElementById("firstNumber").value;
+            const b = document.getElementById("secondNumber").value;
+
+            //if we wont specify anything in fetch it asume it is a get method 
+            //we can also specify
+            fetch("https://sum-server.100xdevs.com/sum?a= " + a + "&b=" + b , {
+                method : "POST",
+                headers : {
+                    "authorization" : ""
+                }
+            })
+                .then(function(response){
+                    response.text()
+                    .then(function(ans){
+                        document.getElementById("finalSum").innerHTML = ans;
+                    })
+                });
+        }
+    </script>
+</body>
+</html>

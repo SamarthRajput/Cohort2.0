@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO application</title>
+</head>
+<body>
+    <script>
+        let globalID = 1;
+
+        function markAsDone(todoId){
+            const parent = document.getElementById(todoId);
+            parent.children[2].innerHTML = "Done!";
+        }
+
+        function createChild(title , description , id){
+            const child = document.createElement("div");
+            const firstGrandChild = document.createElement("div");
+            firstGrandChild.innerHTML = title;
+            const secondGrandChild = document.createElement("div");
+            secondGrandChild.innerHTML = description;   
+            const thirdGrandChild = document.createElement("button");
+            thirdGrandChild.innerHTML = " Mark as done";
+            //setAttribute lets you set attributes on a specific tag
+            //what are attributes type="text" placeholder="Title" id="title" these all are attributes and we can programatically add attributes 
+            //ki i say anytime this button is clicked call markAsDone with this specific id 
+            thirdGrandChild.setAttribute("onclick" ,`markAsDone(${id})`);
+            child.appendChild(firstGrandChild);
+            child.appendChild(secondGrandChild);
+            child.appendChild(thirdGrandChild);
+            child.setAttribute("id", id);
+            return child;
+        }
+
+        function addTodo(){
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const parent = document.getElementById("todos");
+            //createChild actually creating the DOM object
+            parent.appendChild(createChild(title, description , globalID++));
+        }
+    </script>
+    <div>
+        <input type="text" placeholder="Title" id="title"> </input>  <br></br>
+        <input type="text" placeholder="description" id="description"> </input>    <br></br>
+
+        <button onclick="addTodo()">Add TODO</button>
+        <!-- we want ki this last div after 1 time I click Add TODO it look something like this -->
+        <div id="todos">
+            <!-- <div>
+                <div>Title of todo 1</div>
+                <div>description of todo 2</div>
+                <button>Mark as done</button>
+            </div> -->
+        </div>
+    </div>
+</body>
+</html>

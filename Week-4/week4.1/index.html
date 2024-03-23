@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* accessing class using dot  */
+        .container{
+            background-color: red;
+            font-size: 100px;
+            padding: 20px;
+            margin: 100px;
+            color: greenyellow;
+        }
+        /* accessing ids using # */
+        #container1{
+            background-color: red;
+            font-size: 100px;
+            padding: 20px;
+            margin: 100px;
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- unique identifier ids are supposed to be unique. they are used to uniquely identify a div/span/input/button -->
+    <!-- same class can be attached to multiple elements we generally avoid attaching same ids to multiple elements -->
+    <div class="container">
+        hi there
+    </div>
+    <div class="container">
+        hi there 2
+    </div>
+    <div id="container1">
+        hi there 3
+    </div>
+</body>
+</html>

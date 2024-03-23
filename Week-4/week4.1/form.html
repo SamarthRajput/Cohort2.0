@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="First Number" id="firstNumber">   <br></br>
+    <input type="text" placeholder="Second Number" id="secondNumber">   <br></br>
+
+    <button onclick="populateDiv()">Calculate Sum</button>  <br></br>
+    <div id="finalSum"></div>
+
+    <script>
+        function populateDiv(){
+            // alert("hi");
+            //to get internal value of an input box we use document.getElementById("").value;
+            const a = document.getElementById("firstNumber").value;
+            const b = document.getElementById("secondNumber").value;
+            //const element = document.getElementById("finalSum");
+
+            //sending request to the backend
+            //fetch function() it was a function to if you give some inputs ki bhai 
+            //this is the endpoint i have to hit, this is the method i have to hit with, these are the query parameters, 
+            //it gives you back a response
+            //fetch -> i silent request gone out without refreshing the page
+            //fetch is an async call 
+            //you will see res is actually a promise as it should be bcz it takes time for a call to go out to a server
+            // const res = fetch("https://sum-server.100xdevs.com/sum?a= " + a + "&b=" + b)  
+            // console.log(res);
+            //axios => we will se the syntax is much easier to send a request to a backend but for fetch
+            //First you call fetch for a specific URL then you get back a response once you have the response you have to know that ki is the response a simple text, is the response json , is the response binary 
+            //in our case the response is simple text if I know that then we have to do this
+            fetch("https://sum-server.100xdevs.com/sum?a= " + a + "&b=" + b)
+                .then(function(response){
+                    //console.log(response);
+                    response.text()
+                    .then(function(ans){
+                        //console.log(ans); 
+                        document.getElementById("finalSum").innerHTML = ans;
+                    })
+                });
+
+            //this will give 1 + 1 = 11 bcz string will get append in javaScript
+            // element.innerHTML = a + b;
+            // converting string into number
+            //parseInt() is a global function that converts a string into a number 
+            //string => number
+            //"1111" => 1111
+            // element.innerHTML = parseInt(a) + parseInt(b);
+            //.innerHTML is how you put a certain thing inside a div 
+        }
+
+        //cleaner way to write the above code is using async await syntax
+        async function populateDiv2(){
+            const a = document.getElementById("firstNumber").value;
+            const b = document.getElementById("secondNumber").value;
+
+            const response = await fetch("https://sum-server.100xdevs.com/sum?a= " + a + "&b=" + b);
+            const ans = await response.text();      //why are we awaiting response.text() bcz it returns an asynchronous response, it does return a promise which is why you have to await it
+            document.getElementById("finalSum").innerHTML = ans;
+        }
+    </script>
+</body>
+</html>

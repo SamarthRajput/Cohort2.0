@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO application</title>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="Title" id="title"> </input>  <br></br>
+        <input type="text" placeholder="description" id="description"> </input>    <br></br>
+
+        <!-- <button onclick="addTodo()">Add TODO</button> -->
+        <!-- we want ki this last div after 1 time I click Add TODO it look something like this -->
+        <div id="todos">
+            <!-- <div>
+                <div>Title of todo 1</div>
+                <div>description of todo 2</div>
+                <button>Mark as done</button>
+            </div> -->
+        </div>
+    </div>
+
+ <!-- Bad Solution -->
+ <script>
+    function createChild(title , description , id){
+        const child = document.createElement("div");
+        const firstGrandChild = document.createElement("div");
+        firstGrandChild.innerHTML = title;
+        const secondGrandChild = document.createElement("div");
+        secondGrandChild.innerHTML = description;   
+        const thirdGrandChild = document.createElement("button");
+        thirdGrandChild.innerHTML = " Mark as done";
+        thirdGrandChild.setAttribute("onclick" ,`markAsDone(${id})`);
+        child.appendChild(firstGrandChild);
+        child.appendChild(secondGrandChild);
+        child.appendChild(thirdGrandChild);
+        child.setAttribute("id", id);
+        return child;
+    }
+    
+    //Problem Statement :- Given a state as an input render the right set of todos and ignore the original thing that you have
+
+    //State will always be an array
+    //Every element of state would have a title , description and id
+    //Doesnt not matter if there are 10 todos if updateDomAccToState gets called with 2 todos we remove the 10 and then add the 2 this is 1 way of doing it 
+    function updateDomAccToState(state){
+        const parent = document.getElementById("todos");
+        //clear/empty the todos list
+        parent.innerHTML = "";
+        //now for every state variable that i have, i have the createChild function i will create the child and append it
+        for(let i = 0; i<state.length; i++){
+            const child = createChild(state[i].title, state[i].description, state[i].id);
+            parent.appendChild(child);
+        }
+    } 
+    //window. is global way used to access the global variable 
+    window.setInterval(async function(){
+        const response  = await fetch("https://sum-server.100xdevs.com/todos");
+        const json = await response.json();
+        //i have to send json.todos bcz the todos key has all the todos
+        updateDomAccToState(json.todos);
+    } , 5000)
+    
+</script>
+</body>
+</html>

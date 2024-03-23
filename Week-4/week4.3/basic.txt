@@ -1,0 +1,15 @@
+CRUD -> create read update delete
+
+monogdb is schemaless
+
+mongoose database library first tell me what is your schema then we can put whatever data we want to put in the database
+we have to follow the schema mongoose library doesnt allow us to put something random in the monogdb database
+
+Generally we have a strict schema only even though monogdb lets you do whatever schema you want put there generally
+in your application you want a strict schema which is why people prefer SQL (Structured Query Language) ki its lets you inforce strict schema
+but monogdb since it doesnot let you do it mongoose is actually gives you a benefit and makes your application more strict this is similar to the difference between TypeScript and JavaScript 
+
+TypeScript provides you some typesafety on top of JavaScript
+
+
+1. Cluster -> ki bhai you brought an aws machine jha pe you can run multiple databases you can put multiple tables inside the database

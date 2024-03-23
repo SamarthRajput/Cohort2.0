@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO application</title>
+</head>
+<body>
+    <script>
+        function addTodo(){
+            //both are same
+            // "hi there" + title  //this is an ugly way to concatinate strings
+            // `hi there ${title}`     //this slightly cleaner way to concatinate strings
+            //we are appending elements 1 by 1
+            //ugly way to do this
+            //<div>${title}</div> this is templating 
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const originalHTML = document.getElementById("container").innerHTML;
+
+            document.getElementById("container").innerHTML = originalHTML + `           
+             <div>
+                <div>${title}</div>
+                <div>${description}</div>
+                <button>Mark as done</button>
+            </div>
+            `
+        }
+    </script>
+    <div>
+        <input type="text" placeholder="Title" id="title"> </input>  <br></br>
+        <input type="text" placeholder="description" id="description"> </input>    <br></br>
+
+        <button onclick="addTodo()">Add TODO</button>
+        <!-- we want ki this last div after 1 time I click Add TODO it look something like this -->
+        <div id="container">
+            <!-- <div>
+                <div>Title of todo 1</div>
+                <div>description of todo 2</div>
+                <button>Mark as done</button>
+            </div> -->
+        </div>
+    </div>
+</body>
+</html>
