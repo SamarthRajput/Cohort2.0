@@ -1,0 +1,1 @@
+A website whose HTML isnt changing as time goes by is a static website    

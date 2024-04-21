@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<script>
+  function onButtonPress() {
+    const currentValue = document.getElementById("btn").innerHTML;
+    console.log(currentValue.split(" "))
+    const currentCounter = currentValue.split(" ")[1];
+    const newCounter = parseInt(currentCounter) + 1;
+    document.getElementById("btn").innerHTML = "Counter " + newCounter;
+  }
+</script>
+
+<body>
+  <button onclick="onButtonPress()" id="btn">Counter 0</button>
+</body>
+
+</html>
+
+<script>
+  //const [a,b] = [1, 2];  //this is known as array desctructing
+          //OR 
+  //const a = arr[0];
+  //const b = arr[1];
+          //OR
+  const [a, b] = arr;
+
+
+
+  const {name} = {       //this is known as object desctructing
+    name : "Harkirat",
+    age: 21
+  }
+</script>

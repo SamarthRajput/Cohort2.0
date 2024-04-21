@@ -1,0 +1,8 @@
+React Jargons
+1.Components
+2.State
+3.Rerendering
+
+React expect give me a State of your application a very big object that represents all the dynamic part of your application
+give me all your inidivual Components and how they are structured together
+give me how these state is connected to these Components

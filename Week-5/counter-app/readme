@@ -1,0 +1,2 @@
+npm run build command converts our react code into html css js file 
+the dist folder contains our html css js files
