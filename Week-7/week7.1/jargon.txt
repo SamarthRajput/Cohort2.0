@@ -1,0 +1,3 @@
+Single page applications -> which all react, vue, all frontend frameworks where you dynamically changing the page and not refetching something from the backend are called Single page applications
+Client side bundle -> the big bundle that you get on the client that have all your javascript code.
+Client side routing -> The code that you write as the application developer to make sure ki han bhai if the user is on messages page show them there messages so on and so forth.
