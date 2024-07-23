@@ -1,0 +1,9 @@
+Hooks were introduced bcz when you move from class based components to functional components then we need to 
+1. worry about state  
+2. worry about lifecycle events
+
+
+LifeCycle events basically means events that can get triggered or some code you can run whenever a lifecycle of a component changes
+whenever a component mounts which means first time the component get puts on the DOM or it unmounts whenever it gets put off the screen.
+
+Anytime a state variable changes, anytime a hook refreshes the component will re render 
