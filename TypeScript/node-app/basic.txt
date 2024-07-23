@@ -1,0 +1,26 @@
+typescript is transfiled down to javascript 
+if we a typescript file we can run a command to convert typescript file into javascript file 
+We only convert typescript code into javascript code 
+typescript compiler is supposed to ensure ke bhai there are no type errors in our code  
+
+tsconfig.json contains a bunch of configurations ki how do you want to convert your typescript file to javascript file
+
+our inputs/ typescript files should reside in src folder and our output should reside in dist/build folder
+we put dist in .gitignore as dist the folder that is auto generated i should not push it to github 
+we dont want to commit dist folder and nodemodules to the github
+
+big difference between zod and typescript is 
+zod is for runtime checks, zod runs when your code is actually executing on a browser in a nodejs
+typescript is for compile time checks, typescript compilation type checks happen during compile time when your typescript code is converting to javascript code 
+
+
+what is the difference between type and interface
+interface you can extends in a class and type lets you do or's and and's (unions and intersections ) 
+
+interfaces can be implemented by classes
+we can use interfaces to extend
+
+types let u do unions and intersections
+
+
+interfaces and types lets us aggregate data together
